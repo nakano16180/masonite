@@ -23,9 +23,9 @@ class InstallCommand(Command):
         if os.path.isfile("Pipfile"):
             try:
                 if not self.option("no-dev"):
-                    call(["pipenv", "install", "--dev"])
+                    call(["pipenv", "install", "--dev", "-r", "requirements.txt"])
                 else:
-                    call(["pipenv", "install"])
+                    call(["pipenv", "install", "-r", "requirements.txt"])
 
                 if not self.option("no-key"):
                     call(["pipenv", "shell", "craft", "key", "--store"])
