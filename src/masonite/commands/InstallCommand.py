@@ -28,7 +28,7 @@ class InstallCommand(Command):
                     call(["pipenv", "install", "-r", "requirements.txt"])
 
                 if not self.option("no-key"):
-                    call(["pipenv", "shell", "craft", "key", "--store"])
+                    call(["pipenv", "run", "craft", "key", "--store"])
 
                 return
             except Exception:
